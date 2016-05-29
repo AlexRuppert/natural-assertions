@@ -1,0 +1,44 @@
+{
+  "name": "natural-assertions",
+  "displayName": "natural-assertions",
+  "description": "Converts natural language sentences into BDD style Chai assertions.",
+  "version": "0.0.1",
+  "publisher": "AlexRuppert",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.natural2assertion"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.natural2assertion",
+        "title": "Assertify Text"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.natural2assertion",
+        "key": "ctrl+k ctrl+a",
+        "mac": "cmd+k cmd+a",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "tslint": "^3.10.2",
+    "typescript": "^1.8.5",
+    "vscode": "^0.11.0"
+  }
+}
